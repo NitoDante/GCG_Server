@@ -2,6 +2,8 @@ const express = require('express');
 const morgan = require("morgan");
 const cors = require('cors');
 const path = require("path");  
+require("dotenv").config();
+require('./db')
 const app = express();
  
 app.use(cors());
@@ -20,7 +22,4 @@ app.use("/api/matches",require('./src/routes/matches.routes'))
 // Start the server
 const PORT = process.env.PORT || 8080;
 
-app.listen(PORT, () => {
-  console.log(`App listening on port ${PORT}`);
-  console.log('Press Ctrl+C to quit.');
-});
+app.listen(app.get('port'), () => console.log('server running ' +app.get('port')));
