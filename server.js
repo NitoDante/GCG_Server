@@ -14,9 +14,9 @@ app.use(express.static(path.join(__dirname,'images','teamsIcons')));
 app.use(express.json());
 app.use(express.urlencoded({extended:false}));
 
-app.use("/api/players",require('./routes/players.routes'))
-app.use("/api/teams",require('./routes/teams.routes'))
-app.use("/api/matches",require('./routes/matches.routes'))
+app.use("/api/players",require('./src/routes/players.routes'))
+app.use("/api/teams",require('./src/routes/teams.routes'))
+app.use("/api/matches",require('./src/routes/matches.routes'))
 
 app.get("/", (req, res) => {
     res.send("solicitando ruta raiz");
