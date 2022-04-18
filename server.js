@@ -14,6 +14,12 @@ app.use(express.static(path.join(__dirname,'images','teamsIcons')));
 app.use(express.json());
 app.use(express.urlencoded({extended:false}));
 
+app.get('/', (req, res) => {
+    res
+      .status(200)
+      .send('Hello server is running')
+      .end();
+  });
 app.use("/api/players",require('./src/routes/players.routes'))
 app.use("/api/teams",require('./src/routes/teams.routes'))
 app.use("/api/matches",require('./src/routes/matches.routes'))
