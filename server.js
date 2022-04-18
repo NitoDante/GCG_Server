@@ -22,4 +22,4 @@ app.use("/api/matches",require('./src/routes/matches.routes'))
 // Start the server
 const PORT = process.env.PORT || 8080;
 
-app.listen(app.get('port'), () => console.log('server running ' +app.get('port')));
+app.listen(PORT, () => console.log('server running ' +PORT));
