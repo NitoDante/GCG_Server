@@ -8,7 +8,7 @@ const app = express();
  
 app.use(cors());
 app.use(morgan('dev'));
-app.use(express.static(path.join(__dirname,'images','teamsIcons')));  
+app.use(express.static(path.join(__dirname,'src','images','teamsIcons')));  
 
 app.get('/', (req, res) => {
   res
