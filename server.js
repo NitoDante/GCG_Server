@@ -3,7 +3,7 @@ const morgan = require("morgan");
 const cors = require('cors');
 const path = require("path");  
 require("dotenv").config();
-require('./db')
+require('./src/db')
 const app = express();
  
 app.use(cors());
