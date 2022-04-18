@@ -1,16 +1,25 @@
-const express = require('express');
+const express = require("express");
+const morgan = require("morgan");
+const cors = require('cors');
+const path = require("path");  
+
 const app = express();
- 
-app.get('/', (req, res) => {
-  res
-    .status(200)
-    .send('Hello server is running')
-    .end();
+
+app.set('port', process.env.PORT || 3000);
+
+app.use(cors());
+app.use(morgan('dev'));
+app.use(express.static(path.join(__dirname,'images','teamsIcons')));  
+
+app.use(express.json());
+app.use(express.urlencoded({extended:false}));
+
+app.use("/api/players",require('./routes/players.routes'))
+app.use("/api/teams",require('./routes/teams.routes'))
+app.use("/api/matches",require('./routes/matches.routes'))
+
+app.get("/", (req, res) => {
+    res.send("solicitando ruta raiz");
 });
- 
-// Start the server
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`App listening on port ${PORT}`);
-  console.log('Press Ctrl+C to quit.');
-});
+
+module.exports = app;
