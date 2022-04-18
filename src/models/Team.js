@@ -40,6 +40,10 @@ const teamSchema = new Schema({
         type: String,
         contentType:String
     },
+    iconURL:{
+        type:String,
+        contentType:String
+    },
     players:[
         {
             firstName: {
