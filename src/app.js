@@ -18,7 +18,8 @@ app.use("/api/players",require('./routes/players.routes'))
 app.use("/api/teams",require('./routes/teams.routes'))
 app.use("/api/matches",require('./routes/matches.routes'))
 
-app.get("/", (req, res) => {
+app.get("/", (req, res) => {    
+    console.log("raiz");
     res.send("solicitando ruta raiz");
 });
 

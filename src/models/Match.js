@@ -14,6 +14,11 @@ const matchSchema = new Schema({
         unique: false,
         required: true
     },
+    game: {
+        type: String,
+        unique: false,
+        required: true
+    },
     matchData: {
         type: Date,
         unique: false,
