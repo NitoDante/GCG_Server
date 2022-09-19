@@ -6,8 +6,8 @@ require("dotenv").config();
 require('./src/db')
 const app = express();
  
-app.use(cors());
 app.use(morgan('dev'));
+app.use(cors());
 app.use(express.static(path.join(__dirname,'src','images','teamsIcons')));  
 
 app.get('/', (req, res) => {
