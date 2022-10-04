@@ -31,7 +31,7 @@ matchCtrl.getSeasons = async(req,res) => {
         if(!error){
             res.json(result);
         }else{
-            res.json('No hay temporadas ');
+            res.json('No hay temporadas');
         }
     });
     
