@@ -19,6 +19,7 @@ app.get('/', (req, res) => {
 app.use("/api/players",require('./src/routes/players.routes'))
 app.use("/api/teams",require('./src/routes/teams.routes'))
 app.use("/api/matches",require('./src/routes/matches.routes'))
+
 // Start the server
 const PORT = process.env.PORT || 8080;
 

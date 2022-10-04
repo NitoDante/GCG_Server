@@ -4,6 +4,7 @@ const Team = require('../models/Team');
 
 teamCtrl.getTeams = async(req,res) => {
     const Teams = await Team.find();
+    console.log('Teams '+JSON.stringify(Teams));
     res.json(Teams);
 }
 teamCtrl.getTeam = async (req,res) => {

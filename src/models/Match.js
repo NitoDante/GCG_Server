@@ -19,15 +19,30 @@ const matchSchema = new Schema({
         unique: false,
         required: true
     },
-    matchData: {
+    matchDate: {
         type: Date,
+        unique: false,
+        required: true
+    },
+    homeScore: {
+        type: Number,
+        unique: false,
+        required: true
+    },
+    visitorScore: {
+        type: Number,
+        unique: false,
+        required: true
+    },
+    season: {
+        type: String,
         unique: false,
         required: true
     }
 },{
     timestamps: true,
     versionKey : false
-})
+},{ strictQuery : true } )
 
 const Match = model('Match', matchSchema);
 module.exports = Match;
